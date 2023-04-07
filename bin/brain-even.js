@@ -3,7 +3,7 @@
 import readlineSync from "readline-sync";
 import { userName, questionName } from "../src/cli.js";
 
-const evenGame = () => {
+const playEvenGame = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no". ');
 
   for (let i = 1; i <= 3; i += 1) {
@@ -34,4 +34,4 @@ const evenGame = () => {
 };
 
 questionName();
-evenGame();
+playEvenGame();
