@@ -9,3 +9,11 @@ brain-games:
 # simulates publishing a package without actually downloading and publishing it to the NPM server.
 publish:
 		npm publish --dry-run
+
+# Run scan eslint on all folders in a directory
+lint:
+		npx eslint .
+
+# eslint error correction
+lint-fix:
+		npx eslint --fix .
