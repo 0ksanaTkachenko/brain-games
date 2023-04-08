@@ -1,29 +1,36 @@
 import readlineSync from "readline-sync";
 
-let userName;
+// Ask a user a question
+export const askQuestion = (question) => readlineSync.question(question);
 
 // welcome function
+let userName;
 export const helloFunction = () => {
   console.log("Welcome to the Brain Games!");
-  userName = readlineSync.question("May I have your name? ");
+  userName = askQuestion("May I have your name? ");
   console.log(`Hello ${userName}!`);
 };
 
-// checking for the correctness of the answer. Loop exit on wrong answer
+// Loop exit on wrong answer
 export let shouldStop = false;
+const wrongAnswer = (correctAnswer, userAnswer) => {
+  console.log(
+    `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`
+  );
+  console.log(`Let's try again, ${userName}!`);
+  shouldStop = true;
+};
+
+// checking for the correctness of the answer
+
 export const isCorrect = (correctAnswer, userAnswer) => {
   if (userAnswer === correctAnswer) {
     console.log("Correct!");
   } else {
-    console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`
-    );
-    console.log(`Let's try again, ${userName}!`);
-    shouldStop = true;
+    wrongAnswer(correctAnswer, userAnswer);
   }
 };
 
 // congratulations on victory
-export const congratulations = () => {
+export const congratulations = () =>
   console.log(`Congratulations, ${userName}!`);
-};

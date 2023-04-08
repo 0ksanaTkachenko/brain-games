@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import readlineSync from "readline-sync";
 import {
   helloFunction,
+  askQuestion,
   isCorrect,
   shouldStop,
   congratulations,
@@ -14,15 +14,20 @@ const playEvenGame = () => {
   for (let i = 0; i < 3; i += 1) {
     const randomNumber = Math.floor(Math.random() * 100);
     const correctAnswer = randomNumber % 2 === 0 ? "yes" : "no";
-    const userAnswer = readlineSync.question(`Question: ${randomNumber} `);
 
+    // Ask a user a question
+    const userAnswer = askQuestion(`Question: ${randomNumber} `);
     console.log(`Your answer: ${userAnswer}`);
 
+    // checking for the correctness of the answer
     isCorrect(correctAnswer, userAnswer);
+
+    // Loop exit on wrong answer
     if (shouldStop) {
       break;
     }
 
+    // congratulations on victory
     if (i === 2) {
       congratulations();
     }
