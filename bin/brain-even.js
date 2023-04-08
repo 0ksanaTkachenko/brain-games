@@ -1,37 +1,33 @@
 #!/usr/bin/env node
 
 import readlineSync from "readline-sync";
-import { userName, questionName } from "../src/cli.js";
+import {
+  helloFunction,
+  isCorrect,
+  shouldStop,
+  congratulations,
+} from "../src/index.js";
 
 const playEvenGame = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no". ');
 
-  for (let i = 1; i <= 3; i += 1) {
+  for (let i = 0; i < 3; i += 1) {
     const randomNumber = Math.floor(Math.random() * 100);
     const correctAnswer = randomNumber % 2 === 0 ? "yes" : "no";
     const userAnswer = readlineSync.question(`Question: ${randomNumber} `);
 
-    const wrongAnswer = () => {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`
-      );
-      console.log(`Let's try again, ${userName}!`);
-    };
-
     console.log(`Your answer: ${userAnswer}`);
 
-    if (userAnswer === correctAnswer) {
-      console.log("Correct!");
-    } else {
-      wrongAnswer();
+    isCorrect(correctAnswer, userAnswer);
+    if (shouldStop) {
       break;
     }
 
-    if (i === 3) {
-      console.log(`Congratulations, ${userName}!`);
+    if (i === 2) {
+      congratulations();
     }
   }
 };
 
-questionName();
+helloFunction();
 playEvenGame();
