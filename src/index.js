@@ -12,14 +12,14 @@ export const helloFunction = () => {
 };
 
 // random number generation function
-export const generateNumber = () => {
-  return Math.floor(Math.random() * 100);
+export const generateNumber = (range) => {
+  return Math.floor(Math.random() * range);
 };
 
 // checking for the correctness of the answer
 export const isCorrect = (correctAnswer, userAnswer) => {
   console.log(`Your answer: ${userAnswer}`);
-  if (userAnswer === correctAnswer) {
+  if (userAnswer === correctAnswer || +userAnswer === correctAnswer) {
     console.log("Correct!");
   } else {
     wrongAnswer(correctAnswer, userAnswer);

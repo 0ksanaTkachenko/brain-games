@@ -12,7 +12,7 @@ export const playEvenGame = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no". ');
 
   for (let i = 0; i < 3; i += 1) {
-    const randomNumber = generateNumber();
+    const randomNumber = generateNumber(100);
     const correctAnswer = randomNumber % 2 === 0 ? "yes" : "no";
 
     // Ask a user a question
