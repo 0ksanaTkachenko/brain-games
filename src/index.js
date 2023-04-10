@@ -1,6 +1,6 @@
 import readlineSync from "readline-sync";
 
-// Ask a user a question
+// Ask a user a question function
 export const askQuestion = (question) => readlineSync.question(question);
 
 // welcome function
@@ -11,6 +11,21 @@ export const helloFunction = () => {
   console.log(`Hello ${userName}!`);
 };
 
+// random number generation function
+export const generateNumber = () => {
+  return Math.floor(Math.random() * 100);
+};
+
+// checking for the correctness of the answer
+export const isCorrect = (correctAnswer, userAnswer) => {
+  console.log(`Your answer: ${userAnswer}`);
+  if (userAnswer === correctAnswer) {
+    console.log("Correct!");
+  } else {
+    wrongAnswer(correctAnswer, userAnswer);
+  }
+};
+
 // Loop exit on wrong answer
 export let shouldStop = false;
 const wrongAnswer = (correctAnswer, userAnswer) => {
@@ -19,16 +34,6 @@ const wrongAnswer = (correctAnswer, userAnswer) => {
   );
   console.log(`Let's try again, ${userName}!`);
   shouldStop = true;
-};
-
-// checking for the correctness of the answer
-
-export const isCorrect = (correctAnswer, userAnswer) => {
-  if (userAnswer === correctAnswer) {
-    console.log("Correct!");
-  } else {
-    wrongAnswer(correctAnswer, userAnswer);
-  }
 };
 
 // congratulations on victory
