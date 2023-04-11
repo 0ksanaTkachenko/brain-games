@@ -12,3 +12,7 @@ https://asciinema.org/a/575427
 <!-- brain-calc game -->
 
 https://asciinema.org/a/576463
+
+<!-- brain-gcd game -->
+
+https://asciinema.org/a/576481
