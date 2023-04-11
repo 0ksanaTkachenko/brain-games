@@ -23,7 +23,7 @@ export const playProgressionGame = () => {
     let missingNumber = "";
     for (let i = 0; i < rowLength; i += 1) {
       if (i === indexToReplace) {
-        rowArr = rowArr + " " + "...";
+        rowArr = rowArr + " " + "..";
         missingNumber = rowNumber;
       } else {
         rowArr = rowArr + " " + rowNumber;
