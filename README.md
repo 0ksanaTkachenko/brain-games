@@ -16,3 +16,7 @@ https://asciinema.org/a/576463
 <!-- brain-gcd game -->
 
 https://asciinema.org/a/576481
+
+<!-- brain-progression game -->
+
+https://asciinema.org/a/576708

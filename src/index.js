@@ -14,6 +14,7 @@ export const helloFunction = () => {
 // random number generation function
 export const generateNumber = (range) => {
   return Math.floor(Math.random() * range);
+  // return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 // checking for the correctness of the answer
