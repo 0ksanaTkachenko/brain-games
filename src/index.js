@@ -8,7 +8,7 @@ let userName;
 export const helloFunction = () => {
   console.log("Welcome to the Brain Games!");
   userName = askQuestion("May I have your name? ");
-  console.log(`Hello ${userName}!`);
+  console.log(`Hello, ${userName}!`);
 };
 
 // random number generation function
