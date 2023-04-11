@@ -20,3 +20,7 @@ https://asciinema.org/a/576481
 <!-- brain-progression game -->
 
 https://asciinema.org/a/576708
+
+<!-- brain-prime game -->
+
+https://asciinema.org/a/576717
