@@ -15,10 +15,10 @@ export const playProgressionGame = () => {
     const randomNumber = generateNumber(10);
 
     // forming an arithmetic progression
-    const rowLength = 10;
+    const rowLength = 5 + generateNumber(6);
     const progressionStep = generateNumber(20);
     const indexToReplace = generateNumber(rowLength);
-    let rowArr = "";
+    let rowArr = [];
     let rowNumber = randomNumber;
     let missingNumber = "";
     for (let i = 0; i < rowLength; i += 1) {
