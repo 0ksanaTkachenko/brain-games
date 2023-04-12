@@ -28,7 +28,7 @@ export const playCalcGame = () => {
 
     // Ask a user a question
     const userAnswer = askQuestion(
-      `Question: ${randomNumber1} ${operation} ${randomNumber2} `
+      `Question: ${randomNumber1} ${operation} ${randomNumber2}`
     );
 
     // checking for the correctness of the answer
