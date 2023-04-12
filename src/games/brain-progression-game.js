@@ -34,7 +34,7 @@ export const playProgressionGame = () => {
     const correctAnswer = missingNumber;
 
     // Ask a user a question
-    const userAnswer = askQuestion(`Question: ${rowArr} `);
+    const userAnswer = askQuestion(`Question: ${rowArr}`);
 
     // checking for the correctness of the answer
     isCorrect(correctAnswer, userAnswer);
