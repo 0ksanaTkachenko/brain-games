@@ -3,15 +3,15 @@ import {
   askQuestion,
   generateNumber,
   isCorrect,
-  shouldStop,
+  settings,
   congratulations,
-} from "../index.js";
+} from '../index.js';
 
-export const playCalcGame = () => {
+const playCalcGame = () => {
   helloFunction();
-  console.log("What is the result of the expression?");
+  console.log('What is the result of the expression?');
 
-  const operations = ["+", "-", "*"];
+  const operations = ['+', '-', '*'];
 
   for (let i = 0; i < 3; i += 1) {
     const randomNumber1 = generateNumber(10);
@@ -22,20 +22,31 @@ export const playCalcGame = () => {
     const operation = operations[randomIndex];
 
     // correct answer
-    const correctAnswer = eval(
-      `${randomNumber1} ${operation} ${randomNumber2}`
-    );
+    let correctAnswer;
+
+    switch (operation) {
+      case '+':
+        correctAnswer = randomNumber1 + randomNumber2;
+        break;
+      case '-':
+        correctAnswer = randomNumber1 - randomNumber2;
+        break;
+      case '*':
+        correctAnswer = randomNumber1 * randomNumber2;
+        break;
+      default:
+        // обработка некорректной операции
+        break;
+    }
 
     // Ask a user a question
-    const userAnswer = askQuestion(
-      `Question: ${randomNumber1} ${operation} ${randomNumber2}`
-    );
+    const userAnswer = askQuestion(`Question: ${randomNumber1} ${operation} ${randomNumber2}`);
 
     // checking for the correctness of the answer
     isCorrect(correctAnswer, userAnswer);
 
     // Loop exit on wrong answer
-    if (shouldStop) {
+    if (settings.shouldStop) {
       break;
     }
 
@@ -45,3 +56,5 @@ export const playCalcGame = () => {
     }
   }
 };
+
+export default playCalcGame;

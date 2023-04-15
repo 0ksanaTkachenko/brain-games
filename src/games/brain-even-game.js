@@ -3,17 +3,17 @@ import {
   askQuestion,
   generateNumber,
   isCorrect,
-  shouldStop,
+  settings,
   congratulations,
-} from "../index.js";
+} from '../index.js';
 
-export const playEvenGame = () => {
+const playEvenGame = () => {
   helloFunction();
   console.log('Answer "yes" if the number is even, otherwise answer "no". ');
 
   for (let i = 0; i < 3; i += 1) {
     const randomNumber = generateNumber(100);
-    const correctAnswer = randomNumber % 2 === 0 ? "yes" : "no";
+    const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
 
     // Ask a user a question
     const userAnswer = askQuestion(`Question: ${randomNumber} `);
@@ -22,7 +22,7 @@ export const playEvenGame = () => {
     isCorrect(correctAnswer, userAnswer);
 
     // Loop exit on wrong answer
-    if (shouldStop) {
+    if (settings.shouldStop) {
       break;
     }
 
@@ -32,3 +32,5 @@ export const playEvenGame = () => {
     }
   }
 };
+
+export default playEvenGame;

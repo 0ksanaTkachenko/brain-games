@@ -3,13 +3,13 @@ import {
   askQuestion,
   generateNumber,
   isCorrect,
-  shouldStop,
+  settings,
   congratulations,
-} from "../index.js";
+} from '../index.js';
 
-export const playProgressionGame = () => {
+const playProgressionGame = () => {
   helloFunction();
-  console.log("What number is missing in the progression? ");
+  console.log('What number is missing in the progression? ');
 
   for (let i = 0; i < 3; i += 1) {
     // forming an arithmetic progression
@@ -22,9 +22,9 @@ export const playProgressionGame = () => {
     let currentElement = firstElement;
 
     let missingNumber = 0;
-    for (let i = 0; i < progressionLength; i += 1) {
-      if (i === hiddenIndex) {
-        progression.push("..");
+    for (let a = 0; a < progressionLength; a += 1) {
+      if (a === hiddenIndex) {
+        progression.push('..');
         missingNumber = currentElement;
       } else {
         progression.push(currentElement);
@@ -35,13 +35,14 @@ export const playProgressionGame = () => {
     const correctAnswer = missingNumber;
 
     // Ask a user a question
-    const userAnswer = askQuestion(`Question: ${progression.join(" ")}`);
+    const userAnswer = askQuestion(`Question: ${progression.join(' ')}`);
 
     // checking for the correctness of the answer
     isCorrect(correctAnswer, userAnswer);
 
     // Loop exit on wrong answer
-    if (shouldStop) {
+
+    if (settings.shouldStop) {
       break;
     }
 
@@ -51,3 +52,5 @@ export const playProgressionGame = () => {
     }
   }
 };
+
+export default playProgressionGame;

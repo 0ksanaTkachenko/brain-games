@@ -3,39 +3,41 @@ import {
   askQuestion,
   generateNumber,
   isCorrect,
-  shouldStop,
+  settings,
   congratulations,
-} from "../index.js";
+} from '../index.js';
 
-export const playGcdGame = () => {
+const playGcdGame = () => {
   helloFunction();
-  console.log("Find the greatest common divisor of given numbers. ");
+  console.log('Find the greatest common divisor of given numbers. ');
+
+  //   A function that determines the largest divisor of two numbers
+  const gcd = (number1, number2) => {
+    if (number2 === 0) {
+      return number1;
+    }
+    return gcd(number2, number1 % number2);
+  };
 
   for (let i = 0; i < 3; i += 1) {
     const randomNumber1 = generateNumber(30);
     const randomNumber2 = generateNumber(30);
 
     //   A function that determines the largest divisor of two numbers
-
-    function gcd(randomNumber1, randomNumber2) {
-      if (randomNumber2 === 0) {
-        return randomNumber1;
-      }
-      return gcd(randomNumber2, randomNumber1 % randomNumber2);
-    }
+    gcd(randomNumber1, randomNumber2);
 
     const correctAnswer = gcd(randomNumber1, randomNumber2);
 
     // Ask a user a question
     const userAnswer = askQuestion(
-      `Question: ${randomNumber1} ${randomNumber2} `
+      `Question: ${randomNumber1} ${randomNumber2} `,
     );
 
     // checking for the correctness of the answer
     isCorrect(correctAnswer, userAnswer);
 
     // Loop exit on wrong answer
-    if (shouldStop) {
+    if (settings.shouldStop) {
       break;
     }
 
@@ -45,3 +47,5 @@ export const playGcdGame = () => {
     }
   }
 };
+
+export default playGcdGame;

@@ -3,11 +3,11 @@ import {
   askQuestion,
   generateNumber,
   isCorrect,
-  shouldStop,
+  settings,
   congratulations,
-} from "../index.js";
+} from '../index.js';
 
-export const playPrimeGame = () => {
+const playPrimeGame = () => {
   helloFunction();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no". ');
 
@@ -16,19 +16,19 @@ export const playPrimeGame = () => {
 
     //   checking if a number is prime
 
-    const isPrime = (randomNumber) => {
-      if (randomNumber < 2) {
+    const isPrime = (number) => {
+      if (number < 2) {
         return false;
       }
-      for (let i = 2; i <= Math.sqrt(randomNumber); i++) {
-        if (randomNumber % i === 0) {
+      for (let a = 2; a <= Math.sqrt(number); a += 1) {
+        if (number % a === 0) {
           return false;
         }
       }
       return true;
     };
 
-    const correctAnswer = isPrime(randomNumber) ? "yes" : "no";
+    const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
 
     // Ask a user a question
     const userAnswer = askQuestion(`Question: ${randomNumber} `);
@@ -37,7 +37,7 @@ export const playPrimeGame = () => {
     isCorrect(correctAnswer, userAnswer);
 
     // Loop exit on wrong answer
-    if (shouldStop) {
+    if (settings.shouldStop) {
       break;
     }
 
@@ -47,3 +47,5 @@ export const playPrimeGame = () => {
     }
   }
 };
+
+export default playPrimeGame;
