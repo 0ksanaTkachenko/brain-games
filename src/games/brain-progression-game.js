@@ -12,29 +12,30 @@ export const playProgressionGame = () => {
   console.log("What number is missing in the progression? ");
 
   for (let i = 0; i < 3; i += 1) {
-    const randomNumber = generateNumber(10);
-
     // forming an arithmetic progression
-    const rowLength = 5 + generateNumber(6);
-    const progressionStep = generateNumber(20);
-    const indexToReplace = generateNumber(rowLength);
-    let rowArr = [];
-    let rowNumber = randomNumber;
-    let missingNumber = "";
-    for (let i = 0; i < rowLength; i += 1) {
-      if (i === indexToReplace) {
-        rowArr = rowArr + " " + "..";
-        missingNumber = rowNumber;
+
+    const firstElement = generateNumber(10);
+    const progressionLength = 5 + generateNumber(6);
+    const step = generateNumber(20);
+    const hiddenIndex = generateNumber(progressionLength);
+    const progression = [];
+    let currentElement = firstElement;
+
+    let missingNumber = 0;
+    for (let i = 0; i < progressionLength; i += 1) {
+      if (i === hiddenIndex) {
+        progression.push("..");
+        missingNumber = currentElement;
       } else {
-        rowArr = rowArr + " " + rowNumber;
+        progression.push(currentElement);
       }
-      rowNumber += progressionStep;
+      currentElement += step;
     }
 
     const correctAnswer = missingNumber;
 
     // Ask a user a question
-    const userAnswer = askQuestion(`Question: ${rowArr}`);
+    const userAnswer = askQuestion(`Question: ${progression.join(" ")}`);
 
     // checking for the correctness of the answer
     isCorrect(correctAnswer, userAnswer);
