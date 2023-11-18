@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "type": "module",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/0ksanaTkachenko/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/0ksanaTkachenko/frontend-project-44/actions)",
+  "description": "[![Actions Status](https://github.com/0ksanaTkachenko/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/0ksanaTkachenko/frontend-project-44/actions)\n\nThe project consists of five console games - 'brain-games', 'brain-even', 'brain-calc', 'brain-gcd', 'brain-progression', and 'brain-prime'. They comprise a diverse set of logical and mathematical challenges designed to enhance cognitive abilities. Launch the games, enjoy the tasks, and test your skills!",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
