@@ -1,36 +1,21 @@
-import {
-  helloFunction,
-  askQuestion,
-  generateNumber,
-  isCorrect,
-  settings,
-  congratulations,
-} from '../index.js';
+import { generateNumber } from '../utils.js';
+import playGame from '../index.js';
+
+const question = 'Answer "yes" if the number is even, otherwise answer "no". ';
+let randomNumber;
+
+const questionGenerator = () => {
+  randomNumber = generateNumber(100);
+  return `Question: ${randomNumber} `;
+};
+
+const answerChecker = () => {
+  const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
+  return correctAnswer;
+};
 
 const playEvenGame = () => {
-  helloFunction();
-  console.log('Answer "yes" if the number is even, otherwise answer "no". ');
-
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumber = generateNumber(100);
-    const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
-
-    // Ask a user a question
-    const userAnswer = askQuestion(`Question: ${randomNumber} `);
-
-    // checking for the correctness of the answer
-    isCorrect(correctAnswer, userAnswer);
-
-    // Loop exit on wrong answer
-    if (settings.shouldStop) {
-      break;
-    }
-
-    // congratulations on victory
-    if (i === 2) {
-      congratulations();
-    }
-  }
+  playGame(question, questionGenerator, answerChecker);
 };
 
 export default playEvenGame;
