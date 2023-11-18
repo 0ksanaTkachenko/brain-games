@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 
+// Configuration object for game settings
 export const settings = {
   // The loops will stop when the variable changes to true in the wrongAnswer function
   shouldStop: false,
@@ -19,8 +20,11 @@ export const helloFunction = () => {
 // random number generation function
 export const generateNumber = (range) => Math.floor(Math.random() * range);
 
+// Function to handle a wrong user answer
 export const wrongAnswer = (correctAnswer, userAnswer) => {
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  console.log(
+    `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
+  );
   console.log(`Let's try again, ${userName}!`);
 
   // changing shouldStop to true stops the loop
