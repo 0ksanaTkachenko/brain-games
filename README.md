@@ -6,7 +6,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/8934dc09aa0163baa1cd/maintainability)](https://codeclimate.com/github/0ksanaTkachenko/frontend-project-44/maintainability)
 
-## <a name="Game process"></a>Game process:
+## Game process:
 
 "Brain Games" is a set of five console games built on the principle of popular mobile brain training applications. Each game poses questions that require correct answers. After three correct answers, the game is considered passed. Incorrect answers conclude the game and prompt to start over.
 
@@ -38,7 +38,7 @@ Congratulations, Roman!
 
 To win the game, you need to provide the correct answer to three consecutive questions. All games are launched in the terminal by their names. The gameplay process is accessible through the links in the 'Installation' section.
 
-## <a name="installation"></a>Installation
+## Installation
 
 Before starting the games, you need to install them once by running the command "make install" or "npm ci && sudo npm link" in the terminal, after which you can enter the name of the game in the terminal and start playing.
 
@@ -60,7 +60,7 @@ To see an example of installation and the gameplay process, follow the links in 
 - brain-progression game https://asciinema.org/a/576708
 - brain-prime game https://asciinema.org/a/576717
 
-## <a name="Game-Launch"></a>Game Launch
+## Game Launch
 
 Game Launch Options:
 
@@ -90,7 +90,7 @@ brain-prime
 
 Enjoy playing the "Brain Games!"
 
-## <a name="pre-requirements"></a>Prerequisites for Installation
+## Prerequisites for Installation
 
 To run this console game, you will need:
 
