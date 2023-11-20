@@ -1,25 +1,16 @@
-import { generateNumber } from '../utils.js';
-
+import generateNumber from '../utils.js';
 import playGame from '../index.js';
 
-const question = 'What is the result of the expression?';
-const operations = ['+', '-', '*'];
-let randomNumber1;
-let randomNumber2;
-let operation;
-
-const questionGenerator = () => {
+const gameInformationGenerator = () => {
+  const gameRules = 'What is the result of the expression?';
+  const operations = ['+', '-', '*'];
   const randomIndex = generateNumber(operations.length);
-  randomNumber1 = generateNumber(10);
-  randomNumber2 = generateNumber(10);
-  operation = operations[randomIndex];
+  const randomNumber1 = generateNumber(10);
+  const randomNumber2 = generateNumber(10);
+  const operation = operations[randomIndex];
+  const questionForUser = `Question: ${randomNumber1} ${operation} ${randomNumber2} `;
 
-  return `Question: ${randomNumber1} ${operation} ${randomNumber2} `;
-};
-
-const answerChecker = () => {
   let correctAnswer;
-
   switch (operation) {
     case '+':
       correctAnswer = randomNumber1 + randomNumber2;
@@ -33,12 +24,11 @@ const answerChecker = () => {
     default:
       break;
   }
-
-  return correctAnswer;
+  return [gameRules, questionForUser, correctAnswer];
 };
 
 const playCalcGame = () => {
-  playGame(question, questionGenerator, answerChecker);
+  playGame(gameInformationGenerator);
 };
 
 export default playCalcGame;

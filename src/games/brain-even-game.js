@@ -1,21 +1,16 @@
-import { generateNumber } from '../utils.js';
+import generateNumber from '../utils.js';
 import playGame from '../index.js';
 
-const question = 'Answer "yes" if the number is even, otherwise answer "no". ';
-let randomNumber;
-
-const questionGenerator = () => {
-  randomNumber = generateNumber(100);
-  return `Question: ${randomNumber} `;
-};
-
-const answerChecker = () => {
+const gameInformationGenerator = () => {
+  const gameRules = 'Answer "yes" if the number is even, otherwise answer "no". ';
+  const randomNumber = generateNumber(100);
+  const questionForUser = `Question: ${randomNumber}`;
   const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
-  return correctAnswer;
+  return [gameRules, questionForUser, correctAnswer];
 };
 
 const playEvenGame = () => {
-  playGame(question, questionGenerator, answerChecker);
+  playGame(gameInformationGenerator);
 };
 
 export default playEvenGame;

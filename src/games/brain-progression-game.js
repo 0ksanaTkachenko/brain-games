@@ -1,18 +1,15 @@
-import { generateNumber } from '../utils.js';
-
+import generateNumber from '../utils.js';
 import playGame from '../index.js';
 
-const question = 'What number is missing in the progression? ';
-let missingNumber = 0;
-
-const questionGenerator = () => {
+const gameInformationGenerator = () => {
+  const gameRules = 'What number is missing in the progression? ';
   const firstElement = generateNumber(10);
   const progressionLength = 5 + generateNumber(6);
   const step = generateNumber(20);
   const hiddenIndex = generateNumber(progressionLength);
-
   const progression = [];
   let currentElement = firstElement;
+  let missingNumber = 0;
 
   for (let a = 0; a < progressionLength; a += 1) {
     if (a === hiddenIndex) {
@@ -24,16 +21,13 @@ const questionGenerator = () => {
     currentElement += step;
   }
 
-  return `Question: ${progression.join(' ')}`;
-};
-
-const answerChecker = () => {
+  const questionForUser = `Question: ${progression.join(' ')}`;
   const correctAnswer = missingNumber;
-  return correctAnswer;
+  return [gameRules, questionForUser, correctAnswer];
 };
 
 const playProgressionGame = () => {
-  playGame(question, questionGenerator, answerChecker);
+  playGame(gameInformationGenerator);
 };
 
 export default playProgressionGame;
