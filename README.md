@@ -25,13 +25,13 @@ What number is missing in the progression?
 May I have your name? Roman
 Hello, Roman!
 Question: 14 .. 18 20 22 24 26 28
-Your answer: 16 # Пользователь вводит ответ
+Your answer: 16 # The user enters the answer
 Correct!
 Question: 5 6 7 8 9 .. 11 12
-Your answer: 10 # Пользователь вводит ответ
+Your answer: 10 # The user enters the answer
 Correct!
 Question: 12 15 18 21 .. 27 30 33
-Your answer: 24 # Пользователь вводит ответ
+Your answer: 24 # The user enters the answer
 Correct!
 Congratulations, Roman!
 ```
@@ -96,6 +96,6 @@ To run this console game, you will need:
 
 1. **Node.js:** Ensure that you have Node.js installed, version 12 or higher. [Download Node.js](https://nodejs.org/)
 
-2. **npm/yarn:** Install npm (comes with Node.js). [Instructions for installing npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+2. **npm:** Install npm (comes with Node.js). [Instructions for installing npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 3. **Cross-Platform Compatibility:** This game is supported on all major operating systems (Windows, macOS, Linux).
